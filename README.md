@@ -1,7 +1,7 @@
 
 This application is used to provide JSON responses to KPIs and Tabs in https://c2e-reader.curriki.org/
 
-All Api accesspts userId as query parameter and provides JSON response.
+All Api accepts userId as query parameter and provides JSON response.
 
 Please start this application with node index.js in the system or host it inside the docker.
 
