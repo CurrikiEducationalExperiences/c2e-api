@@ -40,16 +40,16 @@ Example: http://localhost:5001/api/v1/wallet/income?userId=1
 
 ## 4. My C2Es
 
-EndPoint: **`/api/v1/projects/c2e/listall`**
+EndPoint: **`/api/v1/c2e/listall`**
 
 Parameter: **userId - Int**
 
-Example: http://localhost:5001/api/v1/projects/c2e/listall?userId=1
+Example: http://localhost:5001/api/v1/c2e/listall?userId=1
 
 ## 5. Marketplace Listings
 
-EndPoint: **`/api/v1/projects/c2e/marketplace`**
+EndPoint: **`/api/v1//c2e/marketplace`**
 
 Parameter: **userId - Int**
 
-Example: http://localhost:5001/api/v1/projects/c2e/marketplace?userId=1
+Example: http://localhost:5001/api/v1/c2e/marketplace?userId=1

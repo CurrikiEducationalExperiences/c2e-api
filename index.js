@@ -241,7 +241,7 @@ app.get('/api/v1/wallet/income', (request, response) => {
 });
 
 
-app.get('/api/v1/projects/c2e/listall', (request, response) => {
+app.get('/api/v1/c2e/listall', (request, response) => {
   const postId = request.query.userId;
   if(postId==1){
 	return response.json({ listing: lsiting1 });
@@ -251,7 +251,7 @@ app.get('/api/v1/projects/c2e/listall', (request, response) => {
   }
 });
 
-app.get('/api/v1/projects/c2e/marketplace', (request, response) => {
+app.get('/api/v1/c2e/marketplace', (request, response) => {
   const postId = request.query.userId;
   if(postId==1){
 	return response.json({ activeList: activeList1 });
