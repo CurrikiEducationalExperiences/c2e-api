@@ -27,10 +27,31 @@ let sales1 = [{
 		"text": "Activity Sampler",
 		"thumbnail": "https://dev.currikistudio.org/api/storage/projects/6296525989512.jpeg"
 	}];
-let sales2 = [
-  'Data 3',
-  'Data 4',
-];
+let sales2 = [{
+		"img": "https://my.currikistudio.org/api/storage/uploads/4H3v8CInfgKPuIquC5P0KjID9fpd7ijyHOHXlQSM.jpeg",
+		"text": "The Science of Golf",
+		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/4H3v8CInfgKPuIquC5P0KjID9fpd7ijyHOHXlQSM.jpeg"
+	}, {
+		"img": "https://my.currikistudio.org/api/storage/uploads/4GnQzEIROIQc8D2wgcbk6H51ppXyXEzVt0uC2NDT.png",
+		"text": "We the Economy",
+		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/4GnQzEIROIQc8D2wgcbk6H51ppXyXEzVt0uC2NDT.png"
+	}, {
+		"img": "https://my.currikistudio.org/api/storage/uploads/5ef0e41c57a06.png",
+		"text": "Globalization, Robots And You",
+		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/5ef0e41c57a06.png"
+	}, {
+		"img": "https://my.currikistudio.org/api/storage/uploads/MdCUVzVRXgfpBtK2nGORhiKI0oBGS8pV09Wz36X8.png",
+		"text": "George Washington and Self-Governance",
+		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/MdCUVzVRXgfpBtK2nGORhiKI0oBGS8pV09Wz36X8.png"
+	}, {
+		"img": "https://my.currikistudio.org/api/storage/uploads/LS6NNGJm4XkvrP0Lg48V8AHX0asRf1yZEa7tHGxb.jpeg",
+		"text": "The Lake Poets",
+		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/LS6NNGJm4XkvrP0Lg48V8AHX0asRf1yZEa7tHGxb.jpeg"
+	}, {
+		"img": "https://my.currikistudio.org/api/storage/uploads/dj9rZXLCtmvR1bMwaQDybopRfgjUJnOkUcokhDRq.jpeg",
+		"text": "LA Opera",
+		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/dj9rZXLCtmvR1bMwaQDybopRfgjUJnOkUcokhDRq.jpeg"
+	}];
 
 let marketplace1 = [
   'Data 3',
