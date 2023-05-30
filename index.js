@@ -15,17 +15,29 @@ app.listen(PORT, () =>
 )
 
 let sales1 = [{
-		"img": "https://dev.currikistudio.org/api/storage/projects/5f6ef3213b73b.jpeg",
-		"text": "The Curriki Vision",
-		"thumbnail": "https://dev.currikistudio.org/api/storage/projects/5f6ef3213b73b.jpeg"
+		"img": "https://my.currikistudio.org/api/storage/uploads/aVDd7qF0bTnUlOFZr0smjmuO50EG5Xm2c7xt0AV8.jpeg",
+		"text": "The Muscular System",
+		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/aVDd7qF0bTnUlOFZr0smjmuO50EG5Xm2c7xt0AV8.jpeg"
 	}, {
-		"img": "https://dev.currikistudio.org/api/storage/projects/5f6ef320988e8.png",
-		"text": "How to Use CurrikiStudio",
-		"thumbnail": "https://dev.currikistudio.org/api/storage/projects/5f6ef320988e8.png"
+		"img": "https://my.currikistudio.org/api/storage/uploads/4l5YP3efnBpxMQ14dcD1PUkzfbjcDCqLO0SFg1Z1.png",
+		"text": "Algebra for Everyone: Functions",
+		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/4l5YP3efnBpxMQ14dcD1PUkzfbjcDCqLO0SFg1Z1.png"
 	}, {
-		"img": "https://dev.currikistudio.org/api/storage/projects/6296525989512.jpeg",
-		"text": "Activity Sampler",
-		"thumbnail": "https://dev.currikistudio.org/api/storage/projects/6296525989512.jpeg"
+		"img": "https://my.currikistudio.org/api/storage/uploads/vxPyA8RhQuwyx67CGDDL4CpnQdxx1RdyfXaL4Ofo.png",
+		"text": "ELA",
+		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/vxPyA8RhQuwyx67CGDDL4CpnQdxx1RdyfXaL4Ofo.png"
+	}, {
+		"img": "https://my.currikistudio.org/api/storage/uploads/cPdf5i4uF7h1bLulgem0Dt1YiSCVtmvQVpY8xX7u.png",
+		"text": "Science",
+		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/cPdf5i4uF7h1bLulgem0Dt1YiSCVtmvQVpY8xX7u.png"
+	}, {
+		"img": "https://my.currikistudio.org/api/storage/uploads/5f19f14163239.jpeg",
+		"text": "LA Opera",
+		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/5f19f14163239.jpeg"
+	}, {
+		"img": "https://my.currikistudio.org/api/storage/uploads/7MxoHL2pqmjcpif7cg0dfPFodeXZ64U65qfV0AdE.png",
+		"text": "US Capitol Historical Society",
+		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/7MxoHL2pqmjcpif7cg0dfPFodeXZ64U65qfV0AdE.png"
 	}];
 let sales2 = [{
 		"img": "https://my.currikistudio.org/api/storage/uploads/4H3v8CInfgKPuIquC5P0KjID9fpd7ijyHOHXlQSM.jpeg",
