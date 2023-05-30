@@ -8,20 +8,6 @@ const PORT = 5001
 // This variable instantiate the Express.js library
 const app = express()
 
-var cors = require("cors");
-
-const corsOpts = {
-  origin: '*',
-
-  methods: [
-    'GET',
-  ],
-
-  allowedHeaders: [
-    'Content-Type',
-  ],
-};
-app.use(cors(corsOpts));
 
 // The code below starts the API with these parameters:
 // 1 - The PORT where your API will be available
