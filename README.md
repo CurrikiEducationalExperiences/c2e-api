@@ -5,6 +5,9 @@ All Api accepts userId as query parameter and provides JSON response.
 
 Please start this application with node index.js in the system or host it inside the docker.
 
+Build with
+**RUN npm install --save express http cors**
+
 Default PORT is set to **5001** which can be customized based on the instances.
 
 
