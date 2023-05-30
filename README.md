@@ -7,7 +7,7 @@ Please start this application with node index.js in the system or host it inside
 
 Build with
 
-**npm install --save express http cors**
+**npm install --save express cors**
 
 Default PORT is set to **5001** which can be customized based on the instances.
 
