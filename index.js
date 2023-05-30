@@ -65,23 +65,67 @@ let sales2 = [{
 		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/dj9rZXLCtmvR1bMwaQDybopRfgjUJnOkUcokhDRq.jpeg"
 	}];
 
-let marketplace1 = [
-  'Data 3',
-  'Data 4',
-];
-let marketplace2 = [
-  'Data 3',
-  'Data 4',
-];
+let marketplace1 = [{
+                heading: "Udemy",
+                title: "12M Item Sold",
+                text: "3M Products"
+            }, {
+                heading: "Skillshare",
+                title: "9M Item Sold",
+                text: "2.2M Products"
+            }, {
+                heading: "Teachable",
+                title: "7M Item Sold",
+                text: "1.4M Products"
+            }, {
+                heading: "Thinkific",
+                title: "5M Item Sold",
+                text: "1M Products"
+            }];
+let marketplace2 =  [{
+                heading: "Udemy",
+                title: "20M Item Sold",
+                text: "6M Products"
+            }, {
+                heading: "Skillshare",
+                title: "16M Item Sold",
+                text: "4.3M Products"
+            }, {
+                heading: "Teachable",
+                title: "12M Item Sold",
+                text: "2.7M Products"
+            }, {
+                heading: "Thinkific",
+                title: "8M Item Sold",
+                text: "1.9M Products"
+            }];;
 
-let income1 = [
-  'Data 3',
-  'Data 4',
-];
-let income2 = [
-  'Data 3',
-  'Data 4',
-];
+let income1 =  [{
+                price: "$500",
+                income: "Weekly"
+            }, {
+                price: "$2.8K",
+                income: "Monthly"
+            }, {
+                price: "$116K",
+                income: "YTD"
+            }, {
+                price: "$1.5M",
+                income: "All Time"
+            }];
+let income2 =  [{
+                price: "$2K",
+                income: "Weekly"
+            }, {
+                price: "$6.5K",
+                income: "Monthly"
+            }, {
+                price: "$645K",
+                income: "YTD"
+            }, {
+                price: "$3M",
+                income: "All Time"
+            }];
 
 let listing1 = [
   'Data 3',
