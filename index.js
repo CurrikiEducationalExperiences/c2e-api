@@ -168,7 +168,7 @@ let listing1 = [{
 		"price": "$71",
 		"text": "The United States Capitol Historical Society is a nonprofit and nonpartisan educational organization created in 1962 to promote the history of the Capitol and Congress. USCHS serves as an informational and educational resource for its members and the general public."
 	}];
-let lsiting2 = [{
+let listing2 = [{
 		"img": "https://my.currikistudio.org/api/storage/uploads/4H3v8CInfgKPuIquC5P0KjID9fpd7ijyHOHXlQSM.jpeg",
 		"title": "The Science of Golf",
 		"price": "$46",
@@ -286,10 +286,10 @@ app.get('/api/v1/wallet/income', (request, response) => {
 app.get('/api/v1/c2e/listall', (request, response) => {
   const postId = request.query.userId;
   if(postId==1){
-	return response.json({ listing: lsiting1 });
+	return response.json({ listing: listing1 });
   }
   else{
-	return response.json({ listing: lsiting2 });  
+	return response.json({ listing: listing2 });  
   }
 });
 
