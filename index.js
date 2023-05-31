@@ -4,7 +4,6 @@ const PORT = 5001
 
 const app = express()
 
-
 import cors from 'cors'
 
 const corsOpts = {
