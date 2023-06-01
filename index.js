@@ -24,54 +24,46 @@ app.listen(PORT, () =>
 )
 
 let sales1 = [{
-		"img": "https://my.currikistudio.org/api/storage/uploads/aVDd7qF0bTnUlOFZr0smjmuO50EG5Xm2c7xt0AV8.jpeg",
-		"text": "The Muscular System",
-		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/aVDd7qF0bTnUlOFZr0smjmuO50EG5Xm2c7xt0AV8.jpeg"
+		"img": "https://my.currikistudio.org/api/storage/projects/647851e147e4c.png",
+		"text": "Victory Lap",
+		"thumbnail": "https://my.currikistudio.org/api/storage/projects/647851e147e4c.png"
 	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/4l5YP3efnBpxMQ14dcD1PUkzfbjcDCqLO0SFg1Z1.png",
-		"text": "Algebra for Everyone: Functions",
-		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/4l5YP3efnBpxMQ14dcD1PUkzfbjcDCqLO0SFg1Z1.png"
+		"img": "https://my.currikistudio.org/api/storage/projects/647851b88d79a.jpeg",
+		"text": "The Science of Golf",
+		"thumbnail": "https://my.currikistudio.org/api/storage/projects/647851b88d79a.jpeg"
 	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/vxPyA8RhQuwyx67CGDDL4CpnQdxx1RdyfXaL4Ofo.png",
-		"text": "ELA",
-		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/vxPyA8RhQuwyx67CGDDL4CpnQdxx1RdyfXaL4Ofo.png"
+		"img": "https://my.currikistudio.org/api/storage/projects/647857024641d.png",
+		"text": "AIG Women's Open",
+		"thumbnail": "https://my.currikistudio.org/api/storage/projects/647857024641d.png"
 	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/cPdf5i4uF7h1bLulgem0Dt1YiSCVtmvQVpY8xX7u.png",
-		"text": "Science",
-		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/cPdf5i4uF7h1bLulgem0Dt1YiSCVtmvQVpY8xX7u.png"
-	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/5f19f14163239.jpeg",
-		"text": "LA Opera",
-		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/5f19f14163239.jpeg"
-	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/7MxoHL2pqmjcpif7cg0dfPFodeXZ64U65qfV0AdE.png",
+		"img": "https://my.currikistudio.org/api/storage/projects/6478540472214.png",
 		"text": "US Capitol Historical Society",
-		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/7MxoHL2pqmjcpif7cg0dfPFodeXZ64U65qfV0AdE.png"
+		"thumbnail": "https://my.currikistudio.org/api/storage/projects/6478540472214.png"
+	}, {
+		"img": "https://my.currikistudio.org/api/storage/projects/6478524355749.png",
+		"text": "Youth Entrepreneurs",
+		"thumbnail": "https://my.currikistudio.org/api/storage/projects/6478524355749.png"
 	}];
 let sales2 = [{
-		"img": "https://my.currikistudio.org/api/storage/uploads/4H3v8CInfgKPuIquC5P0KjID9fpd7ijyHOHXlQSM.jpeg",
-		"text": "The Science of Golf",
-		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/4H3v8CInfgKPuIquC5P0KjID9fpd7ijyHOHXlQSM.jpeg"
+		"img": "https://my.currikistudio.org/api/storage/projects/647852507f3de.png",
+		"text": "Math",
+		"thumbnail": "https://my.currikistudio.org/api/storage/projects/647852507f3de.png"
 	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/4GnQzEIROIQc8D2wgcbk6H51ppXyXEzVt0uC2NDT.png",
-		"text": "We the Economy",
-		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/4GnQzEIROIQc8D2wgcbk6H51ppXyXEzVt0uC2NDT.png"
+		"img": "https://my.currikistudio.org/api/storage/projects/647855931779c.png",
+		"text": "Learning Heroes",
+		"thumbnail": "https://my.currikistudio.org/api/storage/projects/647855931779c.png"
 	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/5ef0e41c57a06.png",
-		"text": "Globalization, Robots And You",
-		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/5ef0e41c57a06.png"
+		"img": "https://my.currikistudio.org/api/storage/projects/647851fc18c07.jpg",
+		"text": "Science",
+		"thumbnail": "https://my.currikistudio.org/api/storage/projects/647851fc18c07.jpg"
 	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/MdCUVzVRXgfpBtK2nGORhiKI0oBGS8pV09Wz36X8.png",
-		"text": "George Washington and Self-Governance",
-		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/MdCUVzVRXgfpBtK2nGORhiKI0oBGS8pV09Wz36X8.png"
+		"img": "https://my.currikistudio.org/api/storage/projects/647854bbdbf28.png",
+		"text": "Civicate Drafts",
+		"thumbnail": "https://my.currikistudio.org/api/storage/projects/647854bbdbf28.png"
 	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/LS6NNGJm4XkvrP0Lg48V8AHX0asRf1yZEa7tHGxb.jpeg",
-		"text": "The Lake Poets",
-		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/LS6NNGJm4XkvrP0Lg48V8AHX0asRf1yZEa7tHGxb.jpeg"
-	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/dj9rZXLCtmvR1bMwaQDybopRfgjUJnOkUcokhDRq.jpeg",
-		"text": "LA Opera",
-		"thumbnail": "https://my.currikistudio.org/api/storage/uploads/dj9rZXLCtmvR1bMwaQDybopRfgjUJnOkUcokhDRq.jpeg"
+		"img": "https://my.currikistudio.org/api/storage/uploads_tmp/JxQltAmvr1YkkYzOFFxqPDk5dozD3Mr9IJ8usKnY.png",
+		"text": "The Branch Alliance for Educator Diversity",
+		"thumbnail": "https://my.currikistudio.org/api/storage/uploads_tmp/JxQltAmvr1YkkYzOFFxqPDk5dozD3Mr9IJ8usKnY.png"
 	}];
 
 let marketplace1 = [{
@@ -137,116 +129,106 @@ let income2 =  [{
             }];
 
 let listing1 = [{
-		"img": "https://my.currikistudio.org/api/storage/uploads/aVDd7qF0bTnUlOFZr0smjmuO50EG5Xm2c7xt0AV8.jpeg",
-		"title": "The Muscular System",
+		"img": "https://my.currikistudio.org/api/storage/projects/647851e147e4c.png",
+		"title": "Victory Lap",
 		"price": "$26",
-		"text": "This course will teach you about the muscular system in the human body. You will learn how the muscles work together with other systems in the body to enable each body part to move."
+		"text": "Victory Lap is a Sales Accelerator to help young professionals. We are a sales education company built by salespeople. We know how to ignite the passionate entrepreneurial mindset from within our candidates to ensure they thrive on this path. We foster the skills in each and every candidate we work with to help them reach their full potential."
 	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/4l5YP3efnBpxMQ14dcD1PUkzfbjcDCqLO0SFg1Z1.png",
-		"title": "Algebra for Everyone: Functions",
-		"price": "$62",
-		"text": "Algebra for Everyone focuses on the essentials of Algebra. This module explores algebra functions using tables, graphs, equations, and the language of functions."
-	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/vxPyA8RhQuwyx67CGDDL4CpnQdxx1RdyfXaL4Ofo.png",
-		"title": "ELA",
-		"price": "$32",
-		"text": "Mrs. Teacher's English Language Arts lessons for the 2020 - 2021 school year."
-	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/cPdf5i4uF7h1bLulgem0Dt1YiSCVtmvQVpY8xX7u.png",
-		"title": "Science",
-		"price": "$37",
-		"text": "Mrs. Teacher's Science lessons for the 2020 - 2021 school year."
-	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/5f19f14163239.jpeg",
-		"title": "LA Opera",
-		"price": "$87",
-		"text": "The LA Opera is committed to providing access to quality opera music for all. Learning is a passion, and so is opera. Opera connects us, through story and music, to our past, our future, and each other. Now, more than ever, we each need and deserve this powerful pathway for connection.  Using online technologies, we are eager to share the wonder and promise of opera with all ages, neighborhoods, and communities, because we know our connections enrich all our lives. Our continuing education programs help fans of all backgrounds expand their familiarity with the art form from home."
-	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/7MxoHL2pqmjcpif7cg0dfPFodeXZ64U65qfV0AdE.png",
-		"title": "US Capitol Historical Society",
-		"price": "$71",
-		"text": "The United States Capitol Historical Society is a nonprofit and nonpartisan educational organization created in 1962 to promote the history of the Capitol and Congress. USCHS serves as an informational and educational resource for its members and the general public."
-	}];
-let listing2 = [{
-		"img": "https://my.currikistudio.org/api/storage/uploads/4H3v8CInfgKPuIquC5P0KjID9fpd7ijyHOHXlQSM.jpeg",
+		"img": "https://my.currikistudio.org/api/storage/projects/647851b88d79a.jpeg",
 		"title": "The Science of Golf",
-		"price": "$46",
+		"price": "$62",
 		"text": "Uncover the science, technology, engineering, and mathematics behind the game of golf."
 	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/4GnQzEIROIQc8D2wgcbk6H51ppXyXEzVt0uC2NDT.png",
-		"title": "We the Economy",
+		"img": "https://my.currikistudio.org/api/storage/projects/647857024641d.png",
+		"title": "AIG Women's Open",
+		"price": "$32",
+		"text": "Explore more about the AIG Women's Open, the most international major in women's golf | To be played in 2021 from August 19-22 at Carnoustie."
+	}, {
+		"img": "https://my.currikistudio.org/api/storage/projects/6478540472214.png",
+		"title": "US Capitol Historical Society",
+		"price": "$37",
+		"text": "The United States Capitol Historical Society is a nonprofit and nonpartisan educational organization created in 1962 to promote the history of the Capitol and Congress. USCHS serves as an informational and educational resource for its members and the general public."
+	}, {
+		"img": "https://my.currikistudio.org/api/storage/projects/6478524355749.png",
+		"title": "Youth Entrepreneurs",
+		"price": "$87",
+		"text": "YE Academy is powered by Youth Entrepreneurs. YE exists to inspire a better future, equipping young people with the values and vision they need to pursue their dreams."
+	}];
+let listing2 = [{
+		"img": "https://my.currikistudio.org/api/storage/projects/647852507f3de.png",
+		"title": "Math",
+		"price": "$46",
+		"text": "In this project you will find math activity samples for Grade 3, Grade 4, and Grade 6."
+	}, {
+		"img": "https://my.currikistudio.org/api/storage/projects/647855931779c.png",
+		"title": "Learning Heroes",
 		"price": "$47",
-		"text": "Everyone\u2019s talking about it, but who can explain it? \n\nIn the current economic climate, the need for citizens to be engaged and informed is greater than ever. A panel of top economic experts including academics, analysts, journalists, and historians helped identify 20 key topics about the U.S. economy that every American should understand. These topics were developed into WE THE ECONOMY, 20 Short Films You Can\u2019t Afford To Miss, a series of 5-8 minute films that aims to drive awareness and establish a better understanding of the U.S. economy. Each film is helmed by an acclaimed filmmaker, each with their own creative vision. This includes the creative talent of directors such as Morgan Spurlock, John Chu, and more.  \n\nTold through animation, comedy, musical, non-fiction, and scripted films, WE THE ECONOMY seeks to demystify a complicated topic while empowering the public to take control of their own economic futures."
+		"text": "According to our national research,"
 	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/5ef0e41c57a06.png",
-		"title": "Globalization, Robots And You",
+		"img": "https://my.currikistudio.org/api/storage/projects/647851fc18c07.jpg",
+		"title": "Science",
 		"price": "$69",
-		"text": "You have important decisions to make about your educations and career \u2013 wouldn\u2019t it be nice if you could better understand the forces of globalization and automation first? What information do you need to gauge salary prospects, the risk of automation, and foreign competition as you compare your options?"
+		"text": "Review the phases of mitosis with this activity variety pack."
 	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/MdCUVzVRXgfpBtK2nGORhiKI0oBGS8pV09Wz36X8.png",
-		"title": "George Washington and Self-Governance",
+		"img": "https://my.currikistudio.org/api/storage/projects/647854bbdbf28.png",
+		"title": "Civicate Drafts",
 		"price": "$26",
-		"text": "This course explores the virtue of self-governance through the life of George Washington."
+		"text": "Civicate.org provides 14 short civic education videos and other resources targeted to middle school students or anyone who learns better through bite-sized (3-5 minute) videos."
 	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/LS6NNGJm4XkvrP0Lg48V8AHX0asRf1yZEa7tHGxb.jpeg",
-		"title": "The Lake Poets",
+		"img": "https://my.currikistudio.org/api/storage/uploads_tmp/JxQltAmvr1YkkYzOFFxqPDk5dozD3Mr9IJ8usKnY.png",
+		"title": "The Branch Alliance for Educator Diversity",
 		"price": "$30",
-		"text": "This course will acquaint you with the three main poets from the Lake District. The written works of William Wordsworth, Samuel Coleridge, and Robert Southey had a great influence on the Romantic period as well as the society in which they lived. You will learn about the background of each Lake Poet as well as their best-known literary accomplishments."
-	}, {
-		"img": "https://my.currikistudio.org/api/storage/uploads/dj9rZXLCtmvR1bMwaQDybopRfgjUJnOkUcokhDRq.jpeg",
-		"title": "LA Opera",
-		"price": "$50",
-		"text": "The LA Opera is committed to providing access to quality opera music for all. Learning is a passion, and so is opera. Opera connects us, through story and music, to our past, our future, and each other. Now, more than ever, we each need and deserve this powerful pathway for connection.  Using online technologies, we are eager to share the wonder and promise of opera with all ages, neighborhoods, and communities, because we know our connections enrich all our lives. Our continuing education programs help fans of all backgrounds expand their familiarity with the art form from home."
+		"text": "The Branch Alliance for Educator Diversity, BranchED, is the only non-profit organization in the country dedicated to strengthening, growing, and amplifying the impact of educator preparation at Minority Serving Institutions, with the longer-range goals of both diversifying the teaching profession and intentionally addressing critical issues of educational equity for all students. Their vision is for all students to have access to diverse, highly effective educators."
 	}];
 
 let activeList1 = [{
                 name: "Thinkific",
-                title: "US Capitol Historical Society",
+                title: "Victory Lap",
                 price: "$71"
             }, {
                 name: "Skillshare",
-                title: "LA Opera",
+                title: "The Science of Golf",
                 price: "$87"
             }, {
             	name: "Teachable",
-                title: "Science",
+                title: "AIG Women's Open",
                 price: "$37"
             }, {
            	 name: "Skillshare",
-                title: "ELA",
+                title: "US Capitol Historical Society",
                 price: "$32"
             }, {
                 name: "Thinkific",
-                title: "Algebra for Everyone: Functions",
+                title: "Youth Entrepreneurs",
                 price: "$62"
             }, {
                 name: "Udemy",
-                title: "The Muscular System",
+                title: "The Science of Golf",
                 price: "$26"
             }];
 let activeList2 =  [{
                 name: "Udemy",
-                title: "LA Opera",
+                title: "Math",
                 price: "$50"
             }, {
                 name: "Skillshare",
-                title: "The Lake Poets",
+                title: "Learning Heroes",
                 price: "$30"
             }, {
             	name: "Thinkific",
-                title: "The Science of Golf",
+                title: "Science",
                 price: "$46"
             }, {
            	 name: "Skillshare",
-                title: "We the Economy",
+                title: "Civicate Drafts",
                 price: "$47"
             }, {
                 name: "Teachable",
-                title: "George Washington and Self-Governance",
+                title: "The Branch Alliance for Educator Diversity",
                 price: "$26"
             }, {
                 name: "Thinkific",
-                title: "Globalization, Robots And You",
+                title: "Science",
                 price: "$69"
             }];
 
