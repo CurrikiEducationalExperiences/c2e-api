@@ -1,0 +1,53 @@
+# build.yml
+on:
+  pull_request:
+    paths:
+    - "**"
+  push:
+    paths:
+    - "**"
+    branches:         # array of glob patterns matching against refs/heads. Optional; defaults to all
+    - main          # triggers on pushes that contain changes in master
+
+name: Build
+
+# https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html
+env:
+  AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+  AWS_DEFAULT_OUTPUT: ${{ secrets.AWS_DEFAULT_OUTPUT }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  PROJECT_NAME: c2e
+  ECR_USERNAME: ${{secrets.ECR_USERNAME}}
+  ECR_ACCOUNT: ${{secrets.ECR_ACCOUNT}}
+  CONTAINER_IMAGE: c2e-api:${{ github.sha }}
+  AWS_ACCOUNT_ID: ${{secrets.AWS_ACCOUNT_ID}}
+  EKS_CLUSTER_NAME: ${{secrets.EKS_CLUSTER_NAME}}
+
+jobs:
+  build-and-push:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@main
+    
+    - name: Setup ECR
+      run: |
+        # Login to AWS ECR
+        aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username $ECR_USERNAME --password-stdin $ECR_ACCOUNT
+
+    - name: Build and tag the image
+      run: |
+        # Build and tag the image
+        docker build \
+          -t $CONTAINER_IMAGE \
+          -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE ./
+
+    - name: Push Image
+      run: |
+        # Push image to AWS ECR
+        docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
+
+    
