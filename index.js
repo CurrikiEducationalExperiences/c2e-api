@@ -979,9 +979,23 @@ app.get('/api/v1/c2e/builder/sources', (request, response) => {
 app.get('/api/v1/c2e/builder/search', (request, response) => {
   const postId = request.query.userId;
   if(postId==1){
-	return response.json([{ projects: projects1 }, { activities: activities1 }]);
+    if (!request.query.query) {
+      return response.json({ projects: projects1, activities: activities1});
+    }
+
+    return response.json({
+      projects: projects1.filter((project) => project.name.includes(request.query.query)),
+      activities: activities1.filter((activity) => activity.title.includes(request.query.query)),
+    });
   }
   else{
-	return response.json([{ projects: projects2 }, { activities: activities2 }]);  
+    if (!request.query.query) {
+      return response.json({ projects: projects2, activities: activities2});
+    }
+
+    return response.json({
+      projects: projects2.filter((project) => project.name.includes(request.query.query)),
+      activities: activities2.filter((activity) => activity.title.includes(request.query.query)),
+    });
   }
 });
