@@ -956,6 +956,12 @@ app.get('/api/v1/c2e/listall', (request, response) => {
   }
 });
 
+app.get('/api/v1/c2e/test', (request, response) => {
+  	return response.json({ test: 'test' });
+  
+});
+
+
 app.get('/api/v1/c2e/marketplace', (request, response) => {
   const postId = request.query.userId;
   if(postId==1){
