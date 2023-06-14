@@ -183,53 +183,53 @@ let listing2 = [{
 
 let activeList1 = [{
                 name: "Thinkific",
-                title: "Victory Lap",
-                price: "$71"
+                title: "Our Great Big Backyard",
+                price: 71
             }, {
                 name: "Skillshare",
-                title: "The Science of Golf",
-                price: "$87"
+                title: "US Capitol Historical Society",
+                price: 87
             }, {
             	name: "Teachable",
-                title: "AIG Women's Open",
-                price: "$37"
+                title: "Globalization, Robots And You",
+                price: 37
             }, {
-           	 name: "Skillshare",
-                title: "US Capitol Historical Society",
-                price: "$32"
+           	   name: "Skillshare",
+                title: "Area and Surface Area",
+                price: 32
             }, {
                 name: "Thinkific",
-                title: "Youth Entrepreneurs",
-                price: "$62"
+                title: "ELA Samples",
+                price: 62
             }, {
                 name: "Udemy",
-                title: "The Science of Golf",
-                price: "$26"
+                title: "Math Samples",
+                price: 26
             }];
 let activeList2 =  [{
                 name: "Udemy",
-                title: "Math",
-                price: "$50"
+                title: "Lessons on the Earth's Core",
+                price: 50
             }, {
                 name: "Skillshare",
-                title: "Learning Heroes",
-                price: "$30"
+                title: "Globalization, Robots And You",
+                price: 30
             }, {
             	name: "Thinkific",
-                title: "Science",
-                price: "$46"
+                title: "Our Great Big Backyard",
+                price: 46
             }, {
            	 name: "Skillshare",
-                title: "Civicate Drafts",
-                price: "$47"
+                title: "US Capitol Historical Society",
+                price: 47
             }, {
                 name: "Teachable",
-                title: "The Branch Alliance for Educator Diversity",
-                price: "$26"
+                title: "Area and Surface Area",
+                price: 26
             }, {
                 name: "Thinkific",
-                title: "Science",
-                price: "$69"
+                title: "Math Samples",
+                price: 69
             }];
 
 let sources1 = [{
@@ -919,6 +919,7 @@ let projectsData = [
    {
       "general":{
          "id":706,
+         "price": 0,
          "sharedLink":"https://my.currikistudio.org/project/706/shared",
          "thumb_url":"https://my.currikistudio.org/api/storage/uploads_tmp/cXbEDItaRMfCr4pGYXrsbobln2En3gzC6Ht8SJYS.png",
          "title":"Our Great Big Backyard",
@@ -983,6 +984,7 @@ let projectsData = [
                      "royaltyContentTitle":"Exploring Our Natinal Parks",
                      "agreementDate":"01/01/2022",
                      "status":"Active",
+                     "mediaType": "video",
                      "publisherRights":"Personal",
                      "licenseExpirationDate":"01/01/2025",
                      "publisherName":"National Geographic",
@@ -1078,6 +1080,7 @@ let projectsData = [
    {
       "general":{
          "id":716,
+         "price": 1,
          "sharedLink":"https://my.currikistudio.org/project/716/shared",
          "thumb_url":"https://my.currikistudio.org/api/storage/uploads/7MxoHL2pqmjcpif7cg0dfPFodeXZ64U65qfV0AdE.png",
          "title":"US Capitol Historical Society",
@@ -1184,6 +1187,7 @@ let projectsData = [
                      "royaltyContentTitle":"Political Cartoons",
                      "agreementDate":"01/01/2022",
                      "status":"Active",
+                     "mediaType": "video",
                      "publisherRights":"Personal",
                      "licenseExpirationDate":"01/01/2025",
                      "publisherName":"National Geographic",
@@ -1241,283 +1245,8 @@ let projectsData = [
    },
    {
       "general":{
-         "id":2660,
-         "sharedLink":"https://my.currikistudio.org/project/2660/shared",
-         "thumb_url":"https://my.currikistudio.org/api/storage/projects/5f6b810487344.png",
-         "title":"Youth Entrepreneurs",
-         "description":"YE Academy is powered by Youth Entrepreneurs. YE exists to inspire a better future, equipping young people with the values and vision they need to pursue their dreams.",
-         "keywords":"c2e,entrepreneurship"
-      },
-      "author":{
-         "name":"Caroline Benoist",
-         "email":"info@curriki.org",
-         "url":"https://c2e.curriki.org"
-      },
-      "publisher":{
-         "name":"Curriki Reference Implementation",
-         "email":"info@curriki.org",
-         "url":"https://www.currikistudio.org"
-      },
-      "lifecycle":{
-         "version":"0.1",
-         "releaseStatus":"Beta"
-      },
-      "copyright":{
-         "copyrightNotice":"This C2E has all rights to Curriki",
-         "CopyrihghtYear":"2023",
-         "Price":"$150 per Year per 1000 seats"
-      },
-      "license":{
-         "licenseNumber":"c2e-lsc-cs-2660-Youth-Entrepreneurs",
-         "licensedate":"2023-01-01",
-         "Usage":"Reuse allowed",
-         "format":"offline, online"
-      },
-      "playlists":[
-         {
-            "id":5382,
-            "title":"Value: Be Principled (less than 1 hour)",
-            "project_id":2660,
-            "created_at":"2020-09-23T17:08:20.000000Z",
-            "updated_at":"2020-11-06T17:28:54.000000Z",
-            "activities":[
-               {
-                  "id":23989,
-                  "title":"Alphabet Soup",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b811fd3127.png",
-                  "library_name":"H5P.Flashcards 1.5"
-               },
-               {
-                  "id":23987,
-                  "title":"Activity: Eye Spy",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b811d09c78.png",
-                  "library_name":"H5P.Column 1.11"
-               },
-               {
-                  "id":23981,
-                  "title":"FV Interviews",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b8117725a8.png",
-                  "library_name":"H5P.AudioRecorder 1.0"
-               },
-               {
-                  "id":23983,
-                  "title":"Activity: Pitch It Round 1",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b8119b6d9f.png",
-                  "library_name":"H5P.Column 1.11"
-               },
-               {
-                  "id":23980,
-                  "title":"Activity: One Red Paperclip",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b811705521.png",
-                  "library_name":"H5P.Column 1.11"
-               }
-            ]
-         },
-         {
-            "id":5384,
-            "title":"Value: Be Principled (1 hour or more)",
-            "project_id":2660,
-            "created_at":"2020-09-23T17:08:47.000000Z",
-            "updated_at":"2020-11-06T17:28:55.000000Z",
-            "activities":[
-               {
-                  "id":23995,
-                  "title":"Greed with John Stossel Part 1",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b8147d61ef.png",
-                  "library_name":"H5P.Column 1.11"
-               },
-               {
-                  "id":23992,
-                  "title":"I, Pencil: The Movie",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b813282738.png",
-                  "library_name":"H5P.InteractiveVideo 1.21"
-               },
-               {
-                  "id":24002,
-                  "title":"Activity: Foundational Values Face-Off",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b814ce75aa.png",
-                  "library_name":"H5P.DragQuestion 1.13"
-               },
-               {
-                  "id":24004,
-                  "title":"Activity: Hershey's Market Research",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b814e55b13.png",
-                  "library_name":"H5P.DocumentationTool 1.8"
-               },
-               {
-                  "id":23998,
-                  "title":"Subscription Box Design Project Packet",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b814a3df98.png",
-                  "library_name":"H5P.DocumentationTool 1.8"
-               },
-               {
-                  "id":24000,
-                  "title":"The Footwear Design Project Packet",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b814b595a0.png",
-                  "library_name":"H5P.DocumentationTool 1.8"
-               }
-            ]
-         },
-         {
-            "id":5386,
-            "title":"Value: Be Principaled (Resources)",
-            "project_id":2660,
-            "created_at":"2020-09-23T17:09:34.000000Z",
-            "updated_at":"2020-11-06T17:28:55.000000Z",
-            "activities":[
-               {
-                  "id":24005,
-                  "title":"Speak Out Cards Guide",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b814eba292.png",
-                  "library_name":"H5P.Accordion 1.0"
-               },
-               {
-                  "id":24006,
-                  "title":"Speak Out Cards Activity (Easy)",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b814f428c8.png",
-                  "library_name":"H5P.Column 1.11"
-               },
-               {
-                  "id":24007,
-                  "title":"Speak Out Cards Activity (Medium)",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b814fc517c.png",
-                  "library_name":"H5P.Column 1.11"
-               },
-               {
-                  "id":24008,
-                  "title":"Speak Out Cards Activity (Hard)",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b8150540b9.png",
-                  "library_name":"H5P.Column 1.11"
-               },
-               {
-                  "id":24009,
-                  "title":"The Codec",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b8152247af.png",
-                  "library_name":"H5P.Column 1.11"
-               },
-               {
-                  "id":24010,
-                  "title":"Business Model Canvas",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b81528a441.png",
-                  "library_name":"H5P.Accordion 1.0"
-               },
-               {
-                  "id":24011,
-                  "title":"Business Model Canvas Activity",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b8153d6837.png",
-                  "library_name":"H5P.Column 1.11"
-               }
-            ]
-         },
-         {
-            "id":19755,
-            "title":"Value: Be Principled Teacher Instructions",
-            "project_id":2660,
-            "created_at":"2020-10-06T22:16:47.000000Z",
-            "updated_at":"2020-11-06T17:28:55.000000Z",
-            "activities":[
-               {
-                  "id":23985,
-                  "title":"Alphabet Soup Guide",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b811a7e1eb.png",
-                  "library_name":"H5P.Accordion 1.0"
-               },
-               {
-                  "id":23986,
-                  "title":"Eye Spy Guide",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b811ad699f.png",
-                  "library_name":"H5P.Accordion 1.0"
-               },
-               {
-                  "id":23988,
-                  "title":"FV Interviews GuideI",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b811d657c7.png",
-                  "library_name":"H5P.Accordion 1.0"
-               },
-               {
-                  "id":23982,
-                  "title":"Pitch It Guide",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b8117d2e4b.png",
-                  "library_name":"H5P.Accordion 1.0"
-               },
-               {
-                  "id":23984,
-                  "title":"One Red Paperclip Guide",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b811a237cc.png",
-                  "library_name":"H5P.Accordion 1.0"
-               },
-               {
-                  "id":23994,
-                  "title":"John Stossel's \"Greed\" Guide",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b81335eb78.png",
-                  "library_name":"H5P.Accordion 1.0"
-               },
-               {
-                  "id":23990,
-                  "title":"I, Pencil Guide",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b81203a0aa.png",
-                  "library_name":"H5P.Accordion 1.0"
-               },
-               {
-                  "id":23993,
-                  "title":"Foundational Values Face-Off Guide",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b8132e9841.png",
-                  "library_name":"H5P.Accordion 1.0"
-               },
-               {
-                  "id":24003,
-                  "title":"Hershey's Market Research Guide",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b814d43aba.png",
-                  "library_name":"H5P.Accordion 1.0"
-               },
-               {
-                  "id":23997,
-                  "title":"The Subscription Box Design Project Guide",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b8148a5d42.png",
-                  "library_name":"H5P.Accordion 1.0"
-               },
-               {
-                  "id":23996,
-                  "title":"The Footwear Design Project Guide",
-                  "type":"h5p",
-                  "thumb_url":"https://my.currikistudio.org/api/storage/activities/5f6b81484fddb.png",
-                  "library_name":"H5P.Accordion 1.0"
-               }
-            ]
-         }
-      ]
-   },
-   {
-      "general":{
          "id":6439,
+         "price": 2,
          "sharedLink":"https://my.currikistudio.org/project/6439/shared",
          "thumb_url":"https://my.currikistudio.org/api/storage/projects/5f7c98bae0e45.png",
          "title":"Globalization, Robots And You",
@@ -1568,6 +1297,7 @@ let projectsData = [
                      "royaltyContentTitle":"Political Cartoons",
                      "agreementDate":"01/01/2022",
                      "status":"Active",
+                     "mediaType": "video",
                      "publisherRights":"Personal",
                      "licenseExpirationDate":"01/01/2025",
                      "publisherName":"National Geographic",
@@ -1793,6 +1523,7 @@ let projectsData = [
    {
       "general":{
          "id":8910,
+         "price": 3,
          "sharedLink":"https://my.currikistudio.org/project/8910/shared",
          "thumb_url":"https://my.currikistudio.org/api/storage/projects/5f9ae28b16a3d.png",
          "title":"Math Samples",
@@ -2018,6 +1749,7 @@ let projectsData = [
    {
       "general":{
          "id":8911,
+         "price": 4,
          "sharedLink":"https://my.currikistudio.org/project/8911/shared",
          "thumb_url":"https://my.currikistudio.org/api/storage/projects/5f9ae69f205ed.png",
          "title":"ELA Samples",
@@ -2159,6 +1891,7 @@ let projectsData = [
    {
       "general":{
          "id":8915,
+         "price": 5,
          "sharedLink":"https://my.currikistudio.org/project/8915/shared",
          "thumb_url":"https://my.currikistudio.org/api/storage/projects/aEcU4DcmlUyp4xYYR3802P8yYcDZZI04viiCoqgq.jpg",
          "title":"Phases of Mitosis",
@@ -2261,6 +1994,7 @@ let projectsData = [
    {
       "general":{
          "id":17175,
+         "price": 6,
          "sharedLink":"https://my.currikistudio.org/project/17175/shared",
          "thumb_url":"https://images.pexels.com/photos/7013907/pexels-photo-7013907.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280",
          "title":"Area and Surface Area",
@@ -2800,6 +2534,7 @@ let projectsData = [
    {
       "general":{
          "id":17375,
+         "price": 7,
          "sharedLink":"https://my.currikistudio.org/project/17375/shared",
          "thumb_url":"https://my.currikistudio.org/api/storage/projects/6398f51c32df1.png",
          "title":"Deju Institute of Entrepreneurial Leadership",
@@ -2902,6 +2637,7 @@ let projectsData = [
    {
       "general":{
          "id":17849,
+         "price": 8,
          "sharedLink":"https://my.currikistudio.org/project/17849/shared",
          "thumb_url":"https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280",
          "title":"Lessons on the Earth's Core",
