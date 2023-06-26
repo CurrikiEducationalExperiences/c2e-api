@@ -1,11 +1,15 @@
 import express from 'express'
-
-const PORT = 5001
-
-const app = express()
-
+import multer from 'multer'
 import cors from 'cors'
+import fs from 'fs'
+import crypto from 'crypto'
+import zlib from 'zlib'
+import admzip from 'adm-zip'
 
+const key = '123';
+const upload = multer({ dest: 'uploads/' })
+const PORT = 5001
+const app = express()
 const corsOpts = {
   origin: '*',
 
@@ -17,8 +21,8 @@ const corsOpts = {
     'Content-Type',
   ],
 };
-app.use(cors(corsOpts));
 
+app.use(cors(corsOpts));
 app.listen(PORT, () =>
   console.log(`The Books API is running on: http://localhost:${PORT}.`)
 )
@@ -2824,4 +2828,94 @@ app.get('/api/v1/c2e/products', (request, response) => {
 	return response.json({
     projects: projectsData.filter((project) => project.general.title.includes(request.query.query))
   });
+});
+
+app.post('/api/v1/c2e/encrypt', upload.single('c2e'), function (req, res, next) {
+   console.log('Received file for encryption');
+   console.log(req.file);
+   console.log(req.body);
+
+   // Unzipping
+   var zip = new admzip(req.file.destination+req.file.filename);
+   zip.extractAllTo('temp/'+req.file.filename, true);
+   const subdir = fs.readdirSync('temp/'+req.file.filename)[0];
+   // zip the content
+   console.log('zipping content');
+   var zip2 = new admzip();
+   zip2.addLocalFolder('temp/'+req.file.filename+'/'+subdir+'/'+subdir);
+   zip2.writeZip('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e.temp');
+   fs.rmdirSync('temp/'+req.file.filename+'/'+subdir+'/'+subdir, {recursive: true});
+
+   // Ecnrypt the content file
+
+   var cipher = crypto.createCipher('aes-256-cbc', key);
+   var input = fs.createReadStream('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e.temp');
+   var output = fs.createWriteStream('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e');
+
+   input.pipe(cipher).pipe(output);
+
+   output.on('finish', () => {
+      console.log('Encrypted file written to disk!');
+      fs.unlinkSync('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e.temp');
+
+      console.log('repackaging...');
+      var zip3 = new admzip();
+      zip3.addLocalFolder('temp/'+req.file.filename+'/'+subdir, subdir);
+      zip3.writeZip('temp/'+req.file.filename+'/'+subdir+'.c2e');
+
+      var file = fs.createReadStream('temp/'+req.file.filename+'/'+subdir+'.c2e');
+      file.on('end', () => {
+         console.log('file sent');
+         fs.rmdirSync('temp/'+req.file.filename+'/'+subdir, {recursive: true});
+         fs.unlinkSync('temp/'+req.file.filename+'/'+subdir+'.c2e');
+         fs.unlinkSync(req.file.destination+req.file.filename);
+         console.log('files cleaned');
+      });
+      file.pipe(res);
+   });
+});
+
+app.post('/api/v1/c2e/decrypt', upload.single('c2e'), function (req, res, next) {
+   console.log('Received file for decryption');
+   console.log(req.file);
+   console.log(req.body);
+
+   // Unzip the file
+   var zip = new admzip(req.file.destination+req.file.filename);
+   zip.extractAllTo('temp/'+req.file.filename, true);
+   const subdir = fs.readdirSync('temp/'+req.file.filename)[0];
+
+   // Verify licensee
+   /*
+   const manifest = JSON.parse(fs.readFileSync('temp/'+req.file.filename+'/'+subdir+'/manifest.json'));
+   console.log('MANIFEST');
+   console.log(manifest);
+   return res.json({result: 'ok'});
+   */
+
+   var cipher = crypto.createDecipher('aes-256-cbc', key);
+   var input = fs.createReadStream('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e');
+   var output = fs.createWriteStream('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e.decoded');
+
+   input.pipe(cipher).pipe(output);
+
+   output.on('finish', function() {
+      console.log('Decrypted file written to disk!');
+      fs.unlinkSync('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e');
+      fs.renameSync('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e.decoded', 'temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e');
+
+      console.log('repackaging...');
+      var zip2 = new admzip();
+      zip2.addLocalFolder('temp/'+req.file.filename+'/'+subdir, subdir);
+      zip2.writeZip('temp/'+req.file.filename+'/'+subdir+'.c2e');
+
+      var file = fs.createReadStream('temp/'+req.file.filename+'/'+subdir+'.c2e');
+      file.on('end', function() {
+         fs.rmdirSync('temp/'+req.file.filename+'/'+subdir, {recursive: true});
+         fs.unlinkSync('temp/'+req.file.filename+'/'+subdir+'.c2e');
+         fs.unlinkSync(req.file.destination+req.file.filename);
+         console.log('file sent and deleted');
+      });
+      file.pipe(res);
+   });
 });
