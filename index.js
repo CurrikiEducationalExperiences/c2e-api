@@ -2832,8 +2832,6 @@ app.get('/api/v1/c2e/products', (request, response) => {
 
 app.post('/api/v1/c2e/encrypt', upload.single('c2e'), function (req, res, next) {
    console.log('Received file for encryption');
-   console.log(req.file);
-   console.log(req.body);
 
    // Unzipping
    var zip = new admzip(req.file.destination+req.file.filename);
@@ -2877,8 +2875,9 @@ app.post('/api/v1/c2e/encrypt', upload.single('c2e'), function (req, res, next) 
 
 app.post('/api/v1/c2e/decrypt', upload.single('c2e'), function (req, res, next) {
    console.log('Received file for decryption');
-   console.log(req.file);
-   console.log(req.body);
+
+   if (!req.body.user) return res.json({error: 'No user information provided'});
+   if (req.body.user.indexOf('@') === -1) return res.json({error: 'User identification must be an email'});
 
    // Unzip the file
    var zip = new admzip(req.file.destination+req.file.filename);
@@ -2886,12 +2885,13 @@ app.post('/api/v1/c2e/decrypt', upload.single('c2e'), function (req, res, next) 
    const subdir = fs.readdirSync('temp/'+req.file.filename)[0];
 
    // Verify licensee
-   /*
    const manifest = JSON.parse(fs.readFileSync('temp/'+req.file.filename+'/'+subdir+'/manifest.json'));
-   console.log('MANIFEST');
-   console.log(manifest);
-   return res.json({result: 'ok'});
-   */
+   const licensee = manifest.c2eMetadata.copyright.license.licensee?.email;
+
+   if (!licensee) return res.json({error: 'No licensee information for this C2E'});
+   if (licensee !== req.body.user) return res.json({error: `The user (${req.body.user}) is not licensed to view this content`});
+
+
 
    var cipher = crypto.createDecipher('aes-256-cbc', key);
    var input = fs.createReadStream('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e');
