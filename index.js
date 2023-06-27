@@ -2839,6 +2839,16 @@ app.get('/api/v1/c2e/products', (request, response) => {
   });
 });
 
+app.get('/api/v1/c2e/addProducts', (request, response) => {
+  if (!request.query.query) {
+    return response.json({ projects: projectsData });
+  }
+
+	return response.json({
+    projects: projectsData.filter((project) => project.general.title.includes(request.query.query))
+  });
+});
+
 app.post('/api/v1/c2e/encrypt', upload.single('c2e'), function (req, res, next) {
    console.log('Received file for encryption');
 
