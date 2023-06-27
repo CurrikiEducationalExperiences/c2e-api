@@ -928,7 +928,8 @@ let projectsData = [
          "thumb_url":"https://my.currikistudio.org/api/storage/uploads_tmp/cXbEDItaRMfCr4pGYXrsbobln2En3gzC6Ht8SJYS.png",
          "title":"Our Great Big Backyard",
          "description":"#1 New York Times bestselling authors former First Lady Laura Bush and her daughter Jenna Bush Hager have created an exuberant picture book tribute to our national parks and the importance and fun of connecting with nature.",
-         "keywords":"c2e,geography"
+         "keywords":"c2e,geography",
+	 "visible": 1
       },
       "author":{
          "name":"Caroline Benoist",
@@ -1089,7 +1090,8 @@ let projectsData = [
          "thumb_url":"https://my.currikistudio.org/api/storage/uploads/7MxoHL2pqmjcpif7cg0dfPFodeXZ64U65qfV0AdE.png",
          "title":"US Capitol Historical Society",
          "description":"The United States Capitol Historical Society is a nonprofit and nonpartisan educational organization created in 1962 to promote the history of the Capitol and Congress. USCHS serves as an informational and educational resource for its members and the general public.",
-         "keywords":"c2e,history"
+         "keywords":"c2e,history",
+	 "visible": 1
       },
       "author":{
          "name":"Caroline Benoist",
@@ -1255,7 +1257,8 @@ let projectsData = [
          "thumb_url":"https://my.currikistudio.org/api/storage/projects/5f7c98bae0e45.png",
          "title":"Globalization, Robots And You",
          "description":"You have important decisions to make about your educations and career – wouldn’t it be nice if you could better understand the forces of globalization and automation first? What information do you need to gauge salary prospects, the risk of automation, and foreign competition as you compare your options?",
-         "keywords":"c2e,science"
+         "keywords":"c2e,science",
+	 "visible": 1
       },
       "author":{
          "name":"Caroline Benoist",
@@ -1532,7 +1535,8 @@ let projectsData = [
          "thumb_url":"https://my.currikistudio.org/api/storage/projects/5f9ae28b16a3d.png",
          "title":"Math Samples",
          "description":"In this project you will find math activity samples for Grade 3, Grade 4, and Grade 6.",
-         "keywords":"c2e,entrepreneurship"
+         "keywords":"c2e,entrepreneurship",
+	 "visible": 1
       },
       "author":{
          "name":"Caroline Benoist",
@@ -1758,7 +1762,8 @@ let projectsData = [
          "thumb_url":"https://my.currikistudio.org/api/storage/projects/5f9ae69f205ed.png",
          "title":"ELA Samples",
          "description":"In this project you will find sample activities for Grade 3 and Grade 4.",
-         "keywords":"c2e,ela"
+         "keywords":"c2e,ela",
+	 "visible": 1
       },
       "author":{
          "name":"Caroline Benoist",
@@ -1900,7 +1905,8 @@ let projectsData = [
          "thumb_url":"https://my.currikistudio.org/api/storage/projects/aEcU4DcmlUyp4xYYR3802P8yYcDZZI04viiCoqgq.jpg",
          "title":"Phases of Mitosis",
          "description":"Review the phases of mitosis with this activity variety pack.",
-         "keywords":"c2e,biology"
+         "keywords":"c2e,biology",
+	 "visible": 1
       },
       "author":{
          "name":"Caroline Benoist",
@@ -2003,7 +2009,8 @@ let projectsData = [
          "thumb_url":"https://images.pexels.com/photos/7013907/pexels-photo-7013907.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280",
          "title":"Area and Surface Area",
          "description":"Variety of activities of Area and Surface Area.",
-         "keywords":"c2e,physics"
+         "keywords":"c2e,physics",
+	 "visible": 1
       },
       "author":{
          "name":"Caroline Benoist",
@@ -2543,7 +2550,8 @@ let projectsData = [
          "thumb_url":"https://my.currikistudio.org/api/storage/projects/6398f51c32df1.png",
          "title":"Deju Institute of Entrepreneurial Leadership",
          "description":"This entrepreneurship course is broken down into eight individual modules each covering an important area of your road to becoming a successful entrepreneur. Each module covers the subject with a lecture by Dr. Deju supplemented with video material including the words of many entrepreneurs that have been successful in their ventures and even turned them into multibillion-dollar enterprises we all know today.",
-         "keywords":"c2e,entrepreneurship"
+         "keywords":"c2e,entrepreneurship",
+	 "visible": 1
       },
       "author":{
          "name":"Caroline Benoist",
@@ -2646,7 +2654,8 @@ let projectsData = [
          "thumb_url":"https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280",
          "title":"Lessons on the Earth's Core",
          "description":"Lessons on the Earth's Core",
-         "keywords":"c2e,geology"
+         "keywords":"c2e,geology",
+	 "visible": 1
       },
       "author":{
          "name":"Caroline Benoist",
