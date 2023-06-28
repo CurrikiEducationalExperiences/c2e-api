@@ -1,0 +1,13 @@
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+
+MULTIPLE_TG: ""
+CERTIFICATE_ARN: ""
+COMMON_NAME: ""
+
+

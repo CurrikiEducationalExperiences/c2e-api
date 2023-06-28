@@ -23,6 +23,9 @@ env:
   CONTAINER_IMAGE: c2e-api:${{ github.sha }}
   AWS_ACCOUNT_ID: ${{secrets.AWS_ACCOUNT_ID}}
   EKS_CLUSTER_NAME: ${{secrets.EKS_CLUSTER_NAME}}
+  COMMON_NAME: ${{secrets.COMMON_NAME}}
+  MULTIPLE_TG: ${{secrets.MULTIPLE_TG}}
+  CERTIFICATE_ARN: ${{secrets.CERTIFICATE_ARN}}
 
 jobs:
   build-and-push:
@@ -50,4 +53,14 @@ jobs:
         # Push image to AWS ECR
         docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
 
-    
+    - name: Deploy
+      run: |
+        # Deploy to Kubernetes
+        export DOCKER_IMAGE_NAME=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
+        aws eks update-kubeconfig --name ${EKS_CLUSTER_NAME}
+        curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+        helm upgrade --namespace c2e-api --install --debug ${PROJECT_NAME} charts/c2e-api \
+        --set image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE \
+        --set COMMON_NAME=${COMMON_NAME} \
+        --set MULTIPLE_TG=${MULTIPLE_TG} \
+        --set CERTIFICATE_ARN=${CERTIFICATE_ARN}
