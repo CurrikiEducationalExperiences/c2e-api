@@ -1091,7 +1091,7 @@ let projectsData = [
          "title":"US Capitol Historical Society",
          "description":"The United States Capitol Historical Society is a nonprofit and nonpartisan educational organization created in 1962 to promote the history of the Capitol and Congress. USCHS serves as an informational and educational resource for its members and the general public.",
          "keywords":"c2e,history",
-	 "visible": 1, "c2e_url":""
+	 "visible": 1, "c2e_url":"https://c2e-bucket.s3.us-east-2.amazonaws.com/c2eid-716-us-captial-mike%40curriki.org.zip"
       },
       "author":{
          "name":"Caroline Benoist",
