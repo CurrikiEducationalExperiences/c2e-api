@@ -1,0 +1,15 @@
+{
+    "encryption_key": "",
+    "db_user": "",
+    "db_host": "",
+    "db_name": "",
+    "db_password": "",
+    "db_port": "",
+    "aws_region": "",
+    "aws_s3_bucket": "",
+    "aws_s3_bucket_url": "",
+    "aws_credentials" : {
+        "accessKeyId": "",
+        "secretAccessKey": ""
+    }
+}

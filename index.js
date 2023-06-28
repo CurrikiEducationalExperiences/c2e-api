@@ -1,22 +1,30 @@
-import express from 'express'
-import multer from 'multer'
-import cors from 'cors'
-import fs from 'fs'
-import crypto from 'crypto'
-import zlib from 'zlib'
-import admzip from 'adm-zip'
+import express from 'express';
+import multer from 'multer';
+import cors from 'cors';
+import fs from 'fs';
+import crypto from 'crypto';
+import admzip from 'adm-zip';
+import pg from 'pg';
+import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import config from './config.json' assert { type: "json" };
 
-const key = '123';
-const upload = multer({ dest: 'uploads/' })
+const upload = multer({ dest: 'uploads/' });
+const pgClient = new pg.Client({
+   user: config.db_user,
+   host: config.db_host,
+   database: config.db_name,
+   password: config.db_password,
+   port: config.db_port,
+ });
+await pgClient.connect();
+const s3 = new S3Client({ region: config.aws_region, credentials: config.aws_credentials });
 const PORT = 5001
 const app = express()
 const corsOpts = {
   origin: '*',
-
   methods: [
     'GET',
   ],
-
   allowedHeaders: [
     'Content-Type',
   ],
@@ -24,7 +32,7 @@ const corsOpts = {
 
 app.use(cors(corsOpts));
 app.listen(PORT, () =>
-  console.log(`The Books API is running on: http://localhost:${PORT}.`)
+  console.log(`C2E API is running on: http://localhost:${PORT}.`)
 )
 
 let sales1 = [{
@@ -2829,7 +2837,7 @@ app.get('/api/v1/c2e/builder/search', (request, response) => {
   }
 });
 
-app.get('/api/v1/c2e/products', (request, response) => {
+app.get('/api/v1/c2e/products', async (request, response) => {
   if (!request.query.query) {
     return response.json({ projects: projectsData });
   }
@@ -2865,7 +2873,7 @@ app.post('/api/v1/c2e/encrypt', upload.single('c2e'), function (req, res, next) 
 
    // Ecnrypt the content file
 
-   var cipher = crypto.createCipher('aes-256-cbc', key);
+   var cipher = crypto.createCipher('aes-256-cbc', config.encryption_key);
    var input = fs.createReadStream('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e.temp');
    var output = fs.createWriteStream('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e');
 
@@ -2895,8 +2903,8 @@ app.post('/api/v1/c2e/encrypt', upload.single('c2e'), function (req, res, next) 
 app.post('/api/v1/c2e/decrypt', upload.single('c2e'), function (req, res, next) {
    console.log('Received file for decryption');
 
-   if (!req.body.user) return res.json({error: 'No user information provided'});
-   if (req.body.user.indexOf('@') === -1) return res.json({error: 'User identification must be an email'});
+   if (!req.body.user) return res.status(500).json({error: 'No user information provided'});
+   if (req.body.user.indexOf('@') === -1) return res.status(500).json({error: 'User identification must be an email'});
 
    // Unzip the file
    var zip = new admzip(req.file.destination+req.file.filename);
@@ -2907,18 +2915,16 @@ app.post('/api/v1/c2e/decrypt', upload.single('c2e'), function (req, res, next) 
    const manifest = JSON.parse(fs.readFileSync('temp/'+req.file.filename+'/'+subdir+'/manifest.json'));
    const licensee = manifest.c2eMetadata.copyright.license.licensee?.email;
 
-   if (!licensee) return res.json({error: 'No licensee information for this C2E'});
-   if (licensee !== req.body.user) return res.json({error: `The user (${req.body.user}) is not licensed to view this content`});
+   if (!licensee) return res.status(500).json({error: 'No licensee information for this C2E'});
+   if (licensee !== req.body.user) return res.status(500).json({error: `The user (${req.body.user}) is not licensed to view this content`});
 
-
-
-   var cipher = crypto.createDecipher('aes-256-cbc', key);
+   var cipher = crypto.createDecipher('aes-256-cbc', config.encryption_key);
    var input = fs.createReadStream('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e');
    var output = fs.createWriteStream('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e.decoded');
 
    input.pipe(cipher).pipe(output);
 
-   output.on('finish', function() {
+   output.on('finish', async function() {
       console.log('Decrypted file written to disk!');
       fs.unlinkSync('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e');
       fs.renameSync('temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e.decoded', 'temp/'+req.file.filename+'/'+subdir+'/'+subdir+'.c2e');
@@ -2928,6 +2934,65 @@ app.post('/api/v1/c2e/decrypt', upload.single('c2e'), function (req, res, next) 
       zip2.addLocalFolder('temp/'+req.file.filename+'/'+subdir, subdir);
       zip2.writeZip('temp/'+req.file.filename+'/'+subdir+'.c2e');
 
+      // Send encoded and decoded file to s3
+      console.log('Uploading to S3');
+      var files = [
+         { path: req.file.destination+req.file.filename, name: subdir+'.c2e.encoded'},
+         { path: 'temp/'+req.file.filename+'/'+subdir+'.c2e', name: subdir+'.c2e.decoded'}
+      ]
+      for (let i = 0; i < files.length; i++) {
+         const content = fs.createReadStream(files[i].path);
+         const putCommand = new PutObjectCommand({
+            Bucket: config.aws_s3_bucket,
+            Key: files[i].name,
+            Body: content
+         });
+         await s3.send(putCommand);
+         console.log('File sent to S3', files[i].name);
+      }
+      // Prepare thumbnail
+      var thumbnail;
+      try {
+         thumbnail = fs.readFileSync('temp/'+req.file.filename+'/'+subdir+'/thumbnail.png');
+      } catch(e) {
+         console.log(`Thumbnail not found in ${subdir}. Using default.`)
+         thumbnail = fs.readFileSync('assets/default_thumbnail.png');
+      }
+      await s3.send(new PutObjectCommand({
+         Bucket: config.aws_s3_bucket,
+         Key: subdir+'_thumbnail.png',
+         Body: thumbnail
+      }));
+      // Store record in database
+      console.log('Storing db record');
+      const c2es = await pgClient.query('SELECT * from c2e_repo where useremail = $1 and c2e_name = $2', [req.body.user, subdir+'.c2e']);
+
+      if (c2es.rowCount !== 0) {
+         const result = await pgClient.query(
+            'UPDATE c2e_repo SET c2e_url_encoded = $1, c2e_url_decoded = $2, thumbnail = $3, visible = 1 RETURNING *',
+            [
+               config.aws_s3_bucket_url+subdir+'.c2e.encoded',
+               config.aws_s3_bucket_url+subdir+'.c2e.decoded',
+               config.aws_s3_bucket_url+subdir+'_thumbnail.png',
+            ]
+         );
+         console.log('Updated existing record', result);
+      } else {
+         const result = await pgClient.query(
+            'INSERT INTO c2e_repo(useremail, c2e_name, c2e_url_decoded, c2e_url_encoded, c2e_json, thumbnail, visible) VALUES ($1, $2, $3, $4, $5, $6, 1) RETURNING *',
+            [
+               req.body.user,
+               subdir+'.c2e',
+               config.aws_s3_bucket_url+subdir+'.c2e.decoded', 
+               config.aws_s3_bucket_url+subdir+'.c2e.encoded',
+               manifest,
+               config.aws_s3_bucket_url+subdir+'_thumbnail.png'
+            ]
+         );
+         console.log('Inserted new record', result);
+      }
+
+      // Respond with decoded file
       var file = fs.createReadStream('temp/'+req.file.filename+'/'+subdir+'.c2e');
       file.on('end', function() {
          fs.rmdirSync('temp/'+req.file.filename+'/'+subdir, {recursive: true});
@@ -2938,3 +3003,31 @@ app.post('/api/v1/c2e/decrypt', upload.single('c2e'), function (req, res, next) 
       file.pipe(res);
    });
 });
+
+app.get('/api/v1/c2e/reader/listc2e', async (request, response) => {
+   if (!request.query.user) return response.status(500).json({error: 'No user information provided'});
+   if (request.query.user.indexOf('@') === -1) return response.status(500).json({error: 'User identification must be an email'});
+
+   var result = [];
+
+   if (!request.query.query) {
+      result = await pgClient.query(
+         'SELECT * FROM c2e_repo WHERE useremail = $1 and visible = 1',
+         [request.query.user]
+      );
+   } else {
+      result = await pgClient.query(
+         "SELECT * FROM c2e_repo WHERE useremail = $1 AND visible = 1 AND c2e_json->'c2eMetadata'->'general'->>'title' ilike $2",
+         [request.query.user, '%'+request.query.query+'%']
+      );
+   }
+
+   return response.json({projects: result.rows});
+ });
+
+ app.post('/api/v1/c2e/reader/deletec2e', express.json(), async (request, response) => {
+   if (!request.body?.c2eid) return response.status(500).json({error: 'No C2E ID provided.'});
+
+   pgClient.query('UPDATE c2e_repo SET visible = 0 WHERE id = $1', [request.body.c2eid]);
+   return response.json({result: 'ok'});
+ });
