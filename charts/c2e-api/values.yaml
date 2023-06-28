@@ -8,6 +8,6 @@ fullnameOverride: ""
 
 MULTIPLE_TG: ""
 CERTIFICATE_ARN: ""
-COMMON_NAME: ""
+COMMON_NAME: "c2e-api"
 
 
