@@ -929,7 +929,7 @@ let projectsData = [
          "title":"Our Great Big Backyard",
          "description":"#1 New York Times bestselling authors former First Lady Laura Bush and her daughter Jenna Bush Hager have created an exuberant picture book tribute to our national parks and the importance and fun of connecting with nature.",
          "keywords":"c2e,geography",
-	 "visible": 1
+	 "visible": 1, "c2e_url":""
       },
       "author":{
          "name":"Caroline Benoist",
@@ -1091,7 +1091,7 @@ let projectsData = [
          "title":"US Capitol Historical Society",
          "description":"The United States Capitol Historical Society is a nonprofit and nonpartisan educational organization created in 1962 to promote the history of the Capitol and Congress. USCHS serves as an informational and educational resource for its members and the general public.",
          "keywords":"c2e,history",
-	 "visible": 1
+	 "visible": 1, "c2e_url":""
       },
       "author":{
          "name":"Caroline Benoist",
@@ -1258,7 +1258,7 @@ let projectsData = [
          "title":"Globalization, Robots And You",
          "description":"You have important decisions to make about your educations and career – wouldn’t it be nice if you could better understand the forces of globalization and automation first? What information do you need to gauge salary prospects, the risk of automation, and foreign competition as you compare your options?",
          "keywords":"c2e,science",
-	 "visible": 1
+	 "visible": 1, "c2e_url":""
       },
       "author":{
          "name":"Caroline Benoist",
@@ -1536,7 +1536,7 @@ let projectsData = [
          "title":"Math Samples",
          "description":"In this project you will find math activity samples for Grade 3, Grade 4, and Grade 6.",
          "keywords":"c2e,entrepreneurship",
-	 "visible": 1
+	 "visible": 1, "c2e_url":""
       },
       "author":{
          "name":"Caroline Benoist",
@@ -1763,7 +1763,7 @@ let projectsData = [
          "title":"ELA Samples",
          "description":"In this project you will find sample activities for Grade 3 and Grade 4.",
          "keywords":"c2e,ela",
-	 "visible": 1
+	 "visible": 1, "c2e_url":""
       },
       "author":{
          "name":"Caroline Benoist",
@@ -1906,7 +1906,7 @@ let projectsData = [
          "title":"Phases of Mitosis",
          "description":"Review the phases of mitosis with this activity variety pack.",
          "keywords":"c2e,biology",
-	 "visible": 1
+	 "visible": 1, "c2e_url":""
       },
       "author":{
          "name":"Caroline Benoist",
@@ -2010,7 +2010,7 @@ let projectsData = [
          "title":"Area and Surface Area",
          "description":"Variety of activities of Area and Surface Area.",
          "keywords":"c2e,physics",
-	 "visible": 1
+	 "visible": 1, "c2e_url":""
       },
       "author":{
          "name":"Caroline Benoist",
@@ -2551,7 +2551,7 @@ let projectsData = [
          "title":"Deju Institute of Entrepreneurial Leadership",
          "description":"This entrepreneurship course is broken down into eight individual modules each covering an important area of your road to becoming a successful entrepreneur. Each module covers the subject with a lecture by Dr. Deju supplemented with video material including the words of many entrepreneurs that have been successful in their ventures and even turned them into multibillion-dollar enterprises we all know today.",
          "keywords":"c2e,entrepreneurship",
-	 "visible": 1
+	 "visible": 1, "c2e_url":""
       },
       "author":{
          "name":"Caroline Benoist",
@@ -2655,7 +2655,7 @@ let projectsData = [
          "title":"Lessons on the Earth's Core",
          "description":"Lessons on the Earth's Core",
          "keywords":"c2e,geology",
-	 "visible": 1
+	 "visible": 1, "c2e_url":""
       },
       "author":{
          "name":"Caroline Benoist",
