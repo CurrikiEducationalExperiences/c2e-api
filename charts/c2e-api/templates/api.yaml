@@ -31,7 +31,7 @@ spec:
       volumes:
       - name: api-config
         configMap:
-          name: config.json
+          name: api-config
 
 
 ---
