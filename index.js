@@ -2969,11 +2969,13 @@ app.post('/api/v1/c2e/decrypt', upload.single('c2e'), function (req, res, next) 
 
       if (c2es.rowCount !== 0) {
          const result = await pgClient.query(
-            'UPDATE c2e_repo SET c2e_url_encoded = $1, c2e_url_decoded = $2, thumbnail = $3, visible = 1 RETURNING *',
+            'UPDATE c2e_repo SET c2e_url_encoded = $1, c2e_url_decoded = $2, thumbnail = $3, visible = 1 WHERE useremail = $4 and c2e_name = $5 RETURNING *',
             [
                config.aws_s3_bucket_url+subdir+'.c2e.encoded',
                config.aws_s3_bucket_url+subdir+'.c2e.decoded',
                config.aws_s3_bucket_url+subdir+'_thumbnail.png',
+               req.body.user,
+               subdir
             ]
          );
          console.log('Updated existing record', result);
