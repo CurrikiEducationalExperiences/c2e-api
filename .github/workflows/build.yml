@@ -61,7 +61,8 @@ jobs:
         aws eks update-kubeconfig --name ${EKS_CLUSTER_NAME}
         curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
         if [ ${{ github.ref }} = 'refs/heads/develop' ]; then
-          echo "On branch develop"
+          helm upgrade --namespace c2e-dev --install --debug c2e-api charts/c2e-api \
+          --set image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
         elif [ ${{ github.ref }} = 'refs/heads/main' ]; then
           helm upgrade --namespace c2e-prod --install --debug c2e-api charts/c2e-api \
           --set image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
