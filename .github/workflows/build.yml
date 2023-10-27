@@ -63,7 +63,7 @@ jobs:
         if [ ${{ github.ref }} = 'refs/heads/develop' ]; then
           echo "On branch develop"
         elif [ ${{ github.ref }} = 'refs/heads/main' ]; then
-          helm upgrade --namespace c2e-prod --install --debug ${PROJECT_NAME} charts/c2e-api \
+          helm upgrade --namespace c2e-prod --install --debug c2e-api charts/c2e-api \
           --set image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
         else
           echo "No specific action defined for this branch."
