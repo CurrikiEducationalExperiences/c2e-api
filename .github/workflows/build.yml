@@ -8,6 +8,7 @@ on:
     - "**"
     branches:         # array of glob patterns matching against refs/heads. Optional; defaults to all
     - main          # triggers on pushes that contain changes in master
+    - develop
 
 name: Build
 
@@ -59,5 +60,12 @@ jobs:
         export DOCKER_IMAGE_NAME=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
         aws eks update-kubeconfig --name ${EKS_CLUSTER_NAME}
         curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
-        helm upgrade --namespace c2e-api --install --debug ${PROJECT_NAME} charts/c2e-api \
-        --set image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
+        if [ ${{ github.ref }} = 'refs/heads/develop' ]; then
+          echo "On branch develop"
+        elif [ ${{ github.ref }} = 'refs/heads/main' ]; then
+          helm upgrade --namespace c2e-prod --install --debug ${PROJECT_NAME} charts/c2e-api \
+          --set image.repository=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
+        else
+          echo "No specific action defined for this branch."
+        fi
+        
