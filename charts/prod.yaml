@@ -2,3 +2,4 @@ ingress:
   annotations:
     alb.ingress.kubernetes.io/load-balancer-name: c2e-prod
     alb.ingress.kubernetes.io/group.name: c2e-prod
+host: c2e-api.curriki.org
